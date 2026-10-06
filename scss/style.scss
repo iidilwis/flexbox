@@ -10,15 +10,13 @@ $background-color: #f5f5f5;
 	line-height: $height * 1px;
 }
 
-
 .wrapper {
 	background-color: $background-color;
-	min-height: 100vh;
+	min-height: 100%;
 	font-family: Arial, sans-serif;
 	font-weight: 400;
 	display: flex;
 	flex-direction: column;
-
 }
 
 .main {
@@ -35,8 +33,6 @@ $background-color: #f5f5f5;
 	flex-wrap: wrap;
 	overflow: hidden;
 	gap: 70px;
-
-
 
 	&__intro {
 		flex-shrink: 0;
@@ -58,8 +54,6 @@ $background-color: #f5f5f5;
 
 	&__list {
 		padding: 0 0 0 45px;
-		position: relative;
-
 	}
 }
 
@@ -122,17 +116,14 @@ $background-color: #f5f5f5;
 	color: $accent-color;
 	@include text(30, 36);
 	text-align: center;
+	letter-spacing: 0.3px;
 }
 
 .column-flexbox {
-
+	padding: 50px;
 
 	&__title {
-		margin: 50px 0 0 0;
-	}
-
-	&__column-content {
-		padding: 50px;
+		margin: 0 0 50px 0;
 	}
 }
 
@@ -141,7 +132,6 @@ $background-color: #f5f5f5;
 	justify-content: space-between;
 	flex-wrap: wrap;
 	gap: 30px;
-
 
 	&__element {
 		flex: 1 1 45%;
@@ -166,7 +156,6 @@ $background-color: #f5f5f5;
 	}
 }
 
-
 .alignment-flexbox {
 	background-color: $main-color;
 	padding: 50px;
@@ -174,7 +163,6 @@ $background-color: #f5f5f5;
 	&__title {
 		margin: 0 0 50px 0;
 	}
-
 }
 
 .alignment-content {
@@ -199,6 +187,7 @@ $background-color: #f5f5f5;
 		color: $main-color;
 		text-align: center;
 		text-transform: uppercase;
+		letter-spacing: 0.3px;
 		height: 50px;
 	}
 
@@ -208,6 +197,7 @@ $background-color: #f5f5f5;
 		color: $accent-color;
 		text-align: center;
 		height: 70px;
+		letter-spacing: 0.3px;
 	}
 
 	&__cardcontent {
@@ -215,8 +205,6 @@ $background-color: #f5f5f5;
 		padding: 20px;
 
 	}
-
-
 }
 
 .cardcontent {
@@ -225,7 +213,6 @@ $background-color: #f5f5f5;
 	justify-content: space-between;
 	gap: 20px;
 	height: 380px;
-
 
 	&__text {
 		color: $main-color;
@@ -262,6 +249,7 @@ $background-color: #f5f5f5;
 
 	&__text {
 		@include text(12, 24);
+		letter-spacing: 0.3px;
 		color: $text-color;
 	}
 }
