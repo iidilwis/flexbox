@@ -246,13 +246,15 @@ fieldset {
 }
 .alignment-content__card {
   flex: 0 1 300px;
+  min-height: 500px;
 }
 
 .card {
   background-color: #445162;
-  height: 500px;
   border: 2px solid #445162;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
 }
 .card__header {
   font-size: 24px;
@@ -274,6 +276,7 @@ fieldset {
 }
 .card__cardcontent {
   padding: 20px;
+  flex-grow: 1;
 }
 
 .cardcontent {
@@ -281,7 +284,6 @@ fieldset {
   flex-direction: column;
   justify-content: space-between;
   gap: 20px;
-  height: 380px;
 }
 .cardcontent__text {
   color: #ffffff;
