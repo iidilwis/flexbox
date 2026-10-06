@@ -50,6 +50,7 @@ $background-color: #f5f5f5;
 
 	&__title {
 		@include text(60, 80);
+		text-shadow: 1px 1px 0 #0000004d;
 	}
 
 	&__list {
@@ -62,6 +63,7 @@ $background-color: #f5f5f5;
 
 	&__item {
 		@include text(20, 36);
+		text-shadow: 1px 1px 0 #0000004d;
 		position: relative;
 
 		&::before {
