@@ -12,15 +12,18 @@ $background-color: #f5f5f5;
 
 .wrapper {
 	background-color: $background-color;
-	min-height: 100%;
+	min-height: 100vh;
 	font-family: Arial, sans-serif;
 	font-weight: 400;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 }
 
 .main {
-	flex-grow: 1;
+	flex: auto;
+	max-width: 1280px;
+	box-shadow: 0 0 30px #0000004d;
 }
 
 .header {
@@ -60,7 +63,6 @@ $background-color: #f5f5f5;
 
 .intro-list {
 
-
 	&__item {
 		@include text(20, 36);
 		text-shadow: 1px 1px 0 #0000004d;
@@ -89,7 +91,7 @@ $background-color: #f5f5f5;
 	flex-wrap: wrap;
 
 	&__image {
-		flex: auto;
+		flex: none;
 		max-width: 70%;
 	}
 
