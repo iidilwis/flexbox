@@ -1,0 +1,280 @@
+@use 'reset';
+
+$main-color: #ffffff;
+$accent-color: #445162;
+$text-color: #333333;
+$background-color: #f5f5f5;
+
+@mixin text ($size, $height) {
+	font-size: $size * 1px;
+	line-height: $height * 1px;
+}
+
+
+.wrapper {
+	background-color: $background-color;
+	min-height: 100vh;
+	font-family: Arial, sans-serif;
+	font-weight: 400;
+	display: flex;
+	flex-direction: column;
+
+}
+
+.main {
+	flex-grow: 1;
+}
+
+.header {
+	background-color: $accent-color;
+	height: 323px;
+	padding: 50px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	overflow: hidden;
+	gap: 70px;
+
+
+
+	&__intro {
+		flex-shrink: 0;
+
+	}
+
+	&__image {
+		height: 100%;
+		width: auto;
+	}
+}
+
+.intro {
+	color: $main-color;
+
+	&__title {
+		@include text(60, 80);
+	}
+
+	&__list {
+		padding: 0 0 0 45px;
+		position: relative;
+
+	}
+}
+
+.intro-list {
+
+
+	::before {
+		content: "";
+		position: absolute;
+		height: 100%;
+		width: 35px;
+		top: 7px;
+		left: -40px;
+		background: url('../img/check icon.png') no-repeat;
+	}
+
+	&__item {
+		@include text(20, 36);
+		position: relative;
+
+
+	}
+}
+
+.about-flexbox {
+	background-color: $main-color;
+	padding: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 50px;
+	flex-wrap: wrap;
+
+	&__image {
+		flex: auto;
+		max-width: 70%;
+	}
+
+	&__description {
+		flex: 1 1 50%;
+		gap: 30px;
+	}
+}
+
+.description {
+	display: inline-flex;
+	flex-direction: column;
+
+
+	&__title {}
+
+	&__text {
+		@include text(16, 24);
+		color: $text-color;
+	}
+
+	&__subtitle {
+		color: $accent-color;
+		@include text(24, 36);
+	}
+}
+
+.title {
+	color: $accent-color;
+	@include text(30, 36);
+	text-align: center;
+}
+
+.column-flexbox {
+
+
+	&__title {
+		margin: 50px 0 0 0;
+	}
+
+	&__column-content {
+		padding: 50px;
+	}
+}
+
+.column-content {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 30px;
+
+
+	&__element {
+		flex: 1 1 45%;
+	}
+}
+
+.element {
+	display: flex;
+	gap: 30px;
+	flex-wrap: wrap;
+
+	&__img-box {
+		width: 202px;
+		height: 153px;
+		background-color: $accent-color;
+		flex: none;
+		position: relative;
+		top: 9px
+	}
+
+	&__description {
+		flex: 1 1 50%;
+	}
+}
+
+
+.alignment-flexbox {
+	background-color: $main-color;
+	padding: 50px;
+
+	&__title {
+		margin: 0 0 50px 0;
+	}
+
+	&__alignment-content {}
+}
+
+.alignment-content {
+	display: flex;
+	justify-content: center;
+	gap: 50px;
+	flex-wrap: wrap;
+
+
+
+
+	&__card {
+		flex: 0 1 300px;
+	}
+}
+
+.card {
+	background-color: $accent-color;
+	height: 500px;
+	border: 2px solid $accent-color;
+	border-radius: 5px;
+
+
+
+	&__header {
+		@include text(24, 50);
+		color: $main-color;
+		text-align: center;
+		text-transform: uppercase;
+		height: 50px;
+	}
+
+	&__subtitle {
+		height: 70px;
+		background-color: $main-color;
+		@include text(40, 70);
+		color: $accent-color;
+		text-align: center;
+		height: 70px;
+
+	}
+
+	&__cardcontent {
+
+		padding: 20px;
+
+	}
+
+
+}
+
+.cardcontent {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 20px;
+	height: 380px;
+
+
+	&__text {
+		color: $main-color;
+		@include text(14, 24);
+		flex-grow: 1;
+	}
+
+	&__button {
+		background-color: $main-color;
+		@include text(18, 40);
+		color: $accent-color;
+		text-align: center;
+		text-decoration: none;
+		flex-basis: 40px;
+		border-radius: 5px;
+
+		&:hover {
+			box-shadow: 0 0 10px $main-color;
+			transform: rotate(3deg);
+
+		}
+
+		&:active {
+			transform: scale(90%);
+		}
+	}
+}
+
+.footer {
+	height: 70px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&__text {
+		@include text(12, 24);
+		color: $text-color;
+	}
+}

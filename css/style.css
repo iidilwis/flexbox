@@ -1,0 +1,314 @@
+@charset "UTF-8";
+/* Универсальная box-модель. При border-box заданная ширина/высота элемента уже включает padding и border.Это делает расчёт размеров гораздо предсказуемее.*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем стандартные margin и padding браузера. Отступы будем задавать самостоятельно.*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Не позволяем мобильным браузерам самостоятельно увеличивать размер текста при повороте экрана.*/
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+       text-size-adjust: 100%;
+}
+
+/* Страница как минимум занимает всю высоту viewport.*/
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/*Заголовки сохраняют семантику h1–h6, но браузерные размеры и жирность сбрасываются. Внешний вид заголовков задаём самостоятельно.*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: 1.1;
+}
+
+/* Если встретится длинный URL или другая неразрывная строка, она не должна вылезать за пределы контейнера.*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*  Изображения и другие медиа: display: block убирает лишний зазор снизу, max-width: 100% не позволяет контенту вылезать за пределы родителя.*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Формы по умолчанию могут использовать системный шрифт. Принудительно наследуем шрифт страницы. */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Кнопка должна выглядеть кликабельной.*/
+button {
+  cursor: pointer;
+}
+
+/* Ссылки наследуют цвет родителя вместо стандартного браузерного синего. Подчёркивание намеренно не убираем. */
+a {
+  color: inherit;
+}
+
+/* Убираем стандартные маркеры списков. Если они нужны — зададим их отдельно. */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Убираем стандартные промежутки между ячейками таблицы. */
+table {
+  border-collapse: collapse;
+}
+
+/* Fieldset имеет стандартную рамку и padding. Убираем их, чтобы стилизовать самостоятельно.*/
+fieldset {
+  border: 0;
+  padding: 0;
+}
+
+.wrapper {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.header {
+  background-color: #445162;
+  height: 323px;
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+  gap: 70px;
+}
+.header__intro {
+  flex-shrink: 0;
+}
+.header__image {
+  height: 100%;
+  width: auto;
+}
+
+.intro {
+  color: #ffffff;
+}
+.intro__title {
+  font-size: 60px;
+  line-height: 80px;
+}
+.intro__list {
+  padding: 0 0 0 45px;
+  position: relative;
+}
+
+.intro-list ::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 35px;
+  top: 7px;
+  left: -40px;
+  background: url("../img/check icon.png") no-repeat;
+}
+.intro-list__item {
+  font-size: 20px;
+  line-height: 36px;
+  position: relative;
+}
+
+.about-flexbox {
+  background-color: #ffffff;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+.about-flexbox__image {
+  flex: auto;
+  max-width: 70%;
+}
+.about-flexbox__description {
+  flex: 1 1 50%;
+  gap: 30px;
+}
+
+.description {
+  display: inline-flex;
+  flex-direction: column;
+}
+.description__text {
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+}
+.description__subtitle {
+  color: #445162;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.title {
+  color: #445162;
+  font-size: 30px;
+  line-height: 36px;
+  text-align: center;
+}
+
+.column-flexbox__title {
+  margin: 50px 0 0 0;
+}
+.column-flexbox__column-content {
+  padding: 50px;
+}
+
+.column-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.column-content__element {
+  flex: 1 1 45%;
+}
+
+.element {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.element__img-box {
+  width: 202px;
+  height: 153px;
+  background-color: #445162;
+  flex: none;
+  position: relative;
+  top: 9px;
+}
+.element__description {
+  flex: 1 1 50%;
+}
+
+.alignment-flexbox {
+  background-color: #ffffff;
+  padding: 50px;
+}
+.alignment-flexbox__title {
+  margin: 0 0 50px 0;
+}
+.alignment-content {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+.alignment-content__card {
+  flex: 0 1 300px;
+}
+
+.card {
+  background-color: #445162;
+  height: 500px;
+  border: 2px solid #445162;
+  border-radius: 5px;
+}
+.card__header {
+  font-size: 24px;
+  line-height: 50px;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  height: 50px;
+}
+.card__subtitle {
+  height: 70px;
+  background-color: #ffffff;
+  font-size: 40px;
+  line-height: 70px;
+  color: #445162;
+  text-align: center;
+  height: 70px;
+}
+.card__cardcontent {
+  padding: 20px;
+}
+
+.cardcontent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  height: 380px;
+}
+.cardcontent__text {
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 24px;
+  flex-grow: 1;
+}
+.cardcontent__button {
+  background-color: #ffffff;
+  font-size: 18px;
+  line-height: 40px;
+  color: #445162;
+  text-align: center;
+  text-decoration: none;
+  flex-basis: 40px;
+  border-radius: 5px;
+}
+.cardcontent__button:hover {
+  box-shadow: 0 0 10px #ffffff;
+  transform: rotate(3deg);
+}
+.cardcontent__button:active {
+  transform: scale(90%);
+}
+
+.footer {
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer__text {
+  font-size: 12px;
+  line-height: 24px;
+  color: #333333;
+}
