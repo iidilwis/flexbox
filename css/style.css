@@ -137,7 +137,12 @@ fieldset {
   position: relative;
 }
 
-.intro-list ::before {
+.intro-list__item {
+  font-size: 20px;
+  line-height: 36px;
+  position: relative;
+}
+.intro-list__item::before {
   content: "";
   position: absolute;
   height: 100%;
@@ -145,11 +150,6 @@ fieldset {
   top: 7px;
   left: -40px;
   background: url("../img/check icon.png") no-repeat;
-}
-.intro-list__item {
-  font-size: 20px;
-  line-height: 36px;
-  position: relative;
 }
 
 .about-flexbox {
@@ -219,8 +219,7 @@ fieldset {
   height: 153px;
   background-color: #445162;
   flex: none;
-  position: relative;
-  top: 9px;
+  margin: 9px 0 0 0;
 }
 .element__description {
   flex: 1 1 50%;
@@ -233,6 +232,7 @@ fieldset {
 .alignment-flexbox__title {
   margin: 0 0 50px 0;
 }
+
 .alignment-content {
   display: flex;
   justify-content: center;
@@ -258,7 +258,6 @@ fieldset {
   height: 50px;
 }
 .card__subtitle {
-  height: 70px;
   background-color: #ffffff;
   font-size: 40px;
   line-height: 70px;
